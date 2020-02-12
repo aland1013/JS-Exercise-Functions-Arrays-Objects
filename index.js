@@ -136,7 +136,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  return `This is a ${inventory[index]['car_make']} ${inventory[index]['car_model']}`;
+  return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`;
 }
 
 /**
@@ -152,7 +152,7 @@ function getCarInfoByIndex(inventory, index) {
 */
 function getLastCarInfo(inventory) {
   let index = inventory.length - 1;
-  return `This is a ${inventory[index]['car_make']} ${inventory[index]['car_model']}`;
+  return `This is a ${inventory[index].car_make} ${inventory[index]['car_model']}`;
 }
 
 /**
@@ -170,8 +170,8 @@ function getLastCarInfo(inventory) {
 function getCarInfoById(inventory, id) {
   let car = {};
   
-  for (let i = 0; i < inventory.length; i++) {
-    if (inventory[i]['id'] === id) car = inventory[i];
+  for (i in inventory) {
+    if (inventory[i].id === id) car = inventory[i];
   }
 
   return `This car is a ${car.car_make} ${car.car_model}`;
@@ -201,8 +201,8 @@ function sortCarInventory(inventory) {
 function getModelYears(inventory) {
   let result = [];
 
-  for (let i = 0; i < inventory.length; i++) {
-    result.push(inventory[i]['car_year']);
+  for (i in inventory) {
+    result.push(inventory[i].car_year);
   }
 
   return result;
@@ -223,7 +223,7 @@ function getModelYears(inventory) {
 function getOlderCars(inventory, max_year) {
   let result = [];
 
-  for (let i = 0; i < inventory.length; i++) {
+  for (i in inventory) {
     let car = inventory[i];
     if (car.car_year <= max_year) result.push(car);
   }
@@ -245,7 +245,7 @@ function getOlderCars(inventory, max_year) {
 function getGermanCars(inventory) {
   let result = [];
 
-  for (let i = 0; i < inventory.length; i++) {
+  for (i in inventory) {
     let car = inventory[i];
     let make = car.car_make;
     if (make === 'Audi' || make === 'Mercedes-Benz' || make === 'Volkswagen' || make === 'BMW') result.push(car);
