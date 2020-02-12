@@ -170,7 +170,7 @@ function getLastCarInfo(inventory) {
 function getCarInfoById(inventory, id) {
   let car = {};
   
-  for (i in inventory) {
+  for (let i in inventory) {
     if (inventory[i].id === id) car = inventory[i];
   }
 
@@ -201,7 +201,7 @@ function sortCarInventory(inventory) {
 function getModelYears(inventory) {
   let result = [];
 
-  for (i in inventory) {
+  for (let i in inventory) {
     result.push(inventory[i].car_year);
   }
 
@@ -223,7 +223,7 @@ function getModelYears(inventory) {
 function getOlderCars(inventory, max_year) {
   let result = [];
 
-  for (i in inventory) {
+  for (let i in inventory) {
     let car = inventory[i];
     if (car.car_year <= max_year) result.push(car);
   }
@@ -245,7 +245,7 @@ function getOlderCars(inventory, max_year) {
 function getGermanCars(inventory) {
   let result = [];
 
-  for (i in inventory) {
+  for (let i in inventory) {
     let car = inventory[i];
     let make = car.car_make;
     if (make === 'Audi' || make === 'Mercedes-Benz' || make === 'Volkswagen' || make === 'BMW') result.push(car);
