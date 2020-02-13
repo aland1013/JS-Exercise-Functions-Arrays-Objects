@@ -152,7 +152,7 @@ function getCarInfoByIndex(inventory, index) {
 */
 function getLastCarInfo(inventory) {
   let index = inventory.length - 1;
-  return `This is a ${inventory[index].car_make} ${inventory[index]['car_model']}`;
+  return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`;
 }
 
 /**
