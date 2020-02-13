@@ -76,8 +76,8 @@ function getName(obj) {
 function makeSmartPerson(name) {
   return { 
     name: name,
-    sum: (a, b) => a + b,
-    speak: () => `Hello, my name is ${name}`
+    sum(a, b) { return a + b; },
+    speak() { return `Hello, my name is ${name}`; }
   };
 }
 
